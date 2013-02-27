@@ -36,6 +36,10 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
+            jade: {
+                files: ['<%= yeoman.app %>/index.jade'],
+                tasks: ['jade']
+            },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/*.html',
@@ -245,6 +249,18 @@ module.exports = function (grunt) {
             all: {
                 rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
+        },
+        jade: {
+            compile: {
+                options: {
+                    data: {
+                        debug: false
+                    }
+                },
+                files: {
+                    ".tmp/index.html": ["<%= yeoman.app %>/index.jade"]
+                }
+            }
         }
     });
 
@@ -294,4 +310,6 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    grunt.loadNpmTasks('grunt-contrib-jade');
 };
