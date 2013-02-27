@@ -275,6 +275,7 @@ module.exports = function (grunt) {
             'clean:server',
             'coffee:dist',
             'compass:server',
+            'jade:compile',
             'livereload-start',
             'connect:livereload',
             'open',
