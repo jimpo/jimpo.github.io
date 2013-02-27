@@ -19,24 +19,23 @@ head
   // endbuild
 body
   .container
-    .hero-unit
-      h1= "'Allo, 'Allo!"
-      p You now have
-      ul
-        li HTML5 Boilerplate
-        li Twitter Bootstrap
-        li RequireJS
-      p installed.
-      h3 Enjoy coding! - Yeoman
+    .container
+      // if lt IE 9
+        include partials/ie-upgrade
+      // if gt IE 8
+        <!-->
+        .hero-unit
+          h1= "'Allo, 'Allo!"
+          p You now have
+          ul
+            li HTML5 Boilerplate
+            li Twitter Bootstrap
+            li RequireJS
+          p installed.
+          h3 Enjoy coding! - Yeoman
+        <!--
 
-  //[if lt IE 7]
-    p.chromeframe You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.
-
-  script
-    var _gaq=[['_setAccount','UA-38821893-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+  include partials/google-analytics
 
   // build:js scripts/main.js
   script(data-main="scripts/main", src="components/requirejs/require.js")
