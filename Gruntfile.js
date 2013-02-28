@@ -192,7 +192,7 @@ module.exports = function (grunt) {
             }
         },
         useminPrepare: {
-            html: '<%= yeoman.app %>/index.html',
+            html: '.tmp/index.html',
             options: {
                 dest: '<%= yeoman.dist %>'
             }
@@ -269,7 +269,8 @@ module.exports = function (grunt) {
                 options: {
                     data: {
                         debug: false
-                    }
+                    },
+                    pretty: true
                 },
                 files: {
                     ".tmp/index.html": ["<%= yeoman.app %>/index.jade"]
@@ -309,6 +310,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'coffee',
         'compass:dist',
+        'jade:compile',
         'useminPrepare',
         'requirejs',
         'imagemin',
