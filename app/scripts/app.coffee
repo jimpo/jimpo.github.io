@@ -1,3 +1,3 @@
-define ['backbone', 'routing'], (Backbone, Router) ->
+define ['backbone', 'router'], (Backbone, Router) ->
   appRouter = new Router
   Backbone.history.start()
