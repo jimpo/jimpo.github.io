@@ -21,13 +21,19 @@ body
   include partials/header
 
   .container
-    .container
-      // if lt IE 9
-        include partials/ie-upgrade
-      // if gt IE 8
-        <!-->
-        include partials/home
-        <!--
+    // if lt IE 9
+      include partials/ie-upgrade
+    // if gt IE 8
+      <!-->
+      #pages.carousel.slide
+        .carousel-inner
+          .item.active#home
+            include partials/home
+          .item#maze
+            include partials/maze
+          .item#chaos
+            include partials/chaos
+      <!--
 
   include partials/google-analytics
 
