@@ -23,6 +23,14 @@ define ['jquery', 'underscore', 'bootstrap'], ($, _) ->
   # Determine the page id from the current route
   pageId = -> location.hash || "#home"
 
-  load: ->
+  load: (callback) ->
     index = $pages.find(pageId()).index()
+    # This indicates whether this was the first page load
+    first = ($pages.data('carousel').getActiveIndex() == 0)
     $pages.carousel(index)
+    if callback?
+      if first
+        # 'slid' event is not fired on first page load
+        callback()
+      else
+        $pages.one('slid', callback)

@@ -7,17 +7,17 @@ define ['backbone', 'pages', 'chaos', 'maze'], (Backbone, pages, chaos, maze) ->
       maze: "maze"
       chaos: "chaos"
 
-    switchPage: ->
+    switchPage: (callback) ->
       this._activateHeaderLink()
-      pages.load()
+      pages.load(callback)
 
     chaos: ->
-      this.switchPage()
-      chaos.run()
+      this.switchPage ->
+        chaos.run()
 
     maze: ->
-      this.switchPage()
-      maze.run()
+      this.switchPage ->
+        maze.run()
 
     _activateHeaderLink: ->
       fragment = location.hash || "#"
