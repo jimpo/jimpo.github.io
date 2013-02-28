@@ -3,6 +3,7 @@ require.config
     backbone: '../components/backbone/backbone'
     bootstrap: 'vendor/bootstrap'
     jquery: '../components/jquery/jquery'
+    'jquery-ui': '../components/jquery-ui/ui/jquery-ui.custom'
     underscore: '../components/underscore/underscore'
   shim:
     backbone:
@@ -15,6 +16,6 @@ require.config
       exports: '_'
 
 
-require ['jquery', 'app', 'bootstrap'], ($, app) ->
-  console.log(app)
-  console.log('Running jQuery %s', $().jquery)
+require ['jquery', 'backbone', 'router', 'bootstrap'], ($, Backbone, Router) ->
+  appRouter = new Router
+  Backbone.history.start()

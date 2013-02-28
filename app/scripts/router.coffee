@@ -1,15 +1,23 @@
-define ['backbone', 'pages'], (Backbone, pages) ->
+define ['backbone', 'pages', 'chaos', 'maze'], (Backbone, pages, chaos, maze) ->
 
   Backbone.Router.extend
 
     routes:
       "": "switchPage"
-      maze: "switchPage"
-      chaos: "switchPage"
+      maze: "maze"
+      chaos: "chaos"
 
     switchPage: ->
       this._activateHeaderLink()
       pages.load()
+
+    chaos: ->
+      this.switchPage()
+      chaos.run()
+
+    maze: ->
+      this.switchPage()
+      maze.run()
 
     _activateHeaderLink: ->
       fragment = location.hash || "#"

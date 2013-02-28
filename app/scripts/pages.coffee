@@ -1,4 +1,4 @@
-define ['underscore', 'bootstrap'], (_) ->
+define ['jquery', 'underscore', 'bootstrap'], ($, _) ->
 
   # pageHeights is a hash of each page id to the most recent height
   pageHeights = {}
