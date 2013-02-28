@@ -1,7 +1,9 @@
 require.config
   paths:
-    jquery: '../components/jquery/jquery'
+    backbone: '../components/backbone/backbone'
     bootstrap: 'vendor/bootstrap'
+    jquery: '../components/jquery/jquery'
+    underscore: '../components/underscore/underscore'
   shim:
     backbone:
       deps: ['underscore', 'jquery']
