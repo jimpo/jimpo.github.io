@@ -21,10 +21,10 @@ define ['jquery', 'underscore', 'bootstrap'], ($, _) ->
 
 
   # Determine the page id from the current route
-  pageId = -> location.hash || "#home"
+  pageId = -> (location.hash || "#/home").replace(/^#\//, '')
 
   load: (callback) ->
-    index = $pages.find(pageId()).index()
+    index = $pages.find('#' + pageId()).index()
     # This indicates whether this was the first page load
     first = ($pages.data('carousel').getActiveIndex() == 0)
     $pages.carousel(index)

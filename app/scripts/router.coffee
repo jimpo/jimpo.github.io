@@ -4,8 +4,8 @@ define ['backbone', 'pages', 'chaos', 'maze'], (Backbone, pages, chaos, maze) ->
 
     routes:
       "": "switchPage"
-      maze: "maze"
-      chaos: "chaos"
+      "maze": "maze"
+      "chaos": "chaos"
 
     switchPage: (callback) ->
       this._activateHeaderLink()
@@ -16,10 +16,11 @@ define ['backbone', 'pages', 'chaos', 'maze'], (Backbone, pages, chaos, maze) ->
         chaos.run()
 
     maze: ->
+      console.log('something')
       this.switchPage ->
         maze.run()
 
     _activateHeaderLink: ->
       fragment = location.hash || "#"
       $(".nav > li").removeClass("active")
-      $(".nav a[href=#{fragment}]").parent().addClass("active")
+      $(".nav a[href='#{fragment}']").parent().addClass("active")
