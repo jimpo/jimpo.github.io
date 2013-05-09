@@ -1,10 +1,16 @@
+componentPaths = (components) ->
+  for name, path of components
+    components[name] = '../components/' + path
+  components
+
 require.config
-  paths:
-    backbone: '../components/backbone/backbone'
-    bootstrap: 'vendor/bootstrap'
-    jquery: '../components/jquery/jquery'
-    'jquery-ui': '../components/jquery-ui/ui/jquery-ui'
-    underscore: '../components/underscore/underscore'
+  paths: componentPaths(
+    backbone: 'backbone/backbone'
+    bootstrap: 'sass-bootstrap/docs/assets/js/bootstrap'
+    jquery: 'jquery/jquery'
+    'jquery-ui': 'jquery-ui/ui/jquery-ui'
+    underscore: 'underscore/underscore'
+  )
   shim:
     backbone:
       deps: ['underscore', 'jquery']
