@@ -16,7 +16,6 @@ define ['backbone', 'pages', 'chaos', 'maze'], (Backbone, pages, chaos, maze) ->
         chaos.run()
 
     maze: ->
-      console.log('something')
       this.switchPage ->
         maze.run()
 

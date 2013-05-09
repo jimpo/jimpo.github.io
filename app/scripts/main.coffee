@@ -3,7 +3,7 @@ require.config
     backbone: '../components/backbone/backbone'
     bootstrap: 'vendor/bootstrap'
     jquery: '../components/jquery/jquery'
-    'jquery-ui': '../components/jquery-ui/ui/jquery-ui.custom'
+    'jquery-ui': '../components/jquery-ui/ui/jquery-ui'
     underscore: '../components/underscore/underscore'
   shim:
     backbone:

@@ -3,7 +3,8 @@ define ['backbone'], (Backbone) ->
   dy = [ 0, -1, 0, 1]
 
   Backbone.Model.extend
-    initialize: (@rows, @cols) ->
+    constructor: (@rows, @cols) ->
+      Backbone.Model.call(this)
 
     generate: ->
       @graph = {}
