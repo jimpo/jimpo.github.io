@@ -323,6 +323,14 @@ module.exports = function (grunt) {
                 options: {type: 'dir'},
             }
         },
+        'gh-pages': {
+            build: {
+                options: {
+                    src: 'dist',
+                    branch: 'master',
+                }
+            }
+        },
     });
 
     grunt.renameTask('regarde', 'watch');
@@ -373,4 +381,5 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-symlink');
+    grunt.loadTasks('tasks');
 };
