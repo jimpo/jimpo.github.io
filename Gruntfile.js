@@ -324,7 +324,7 @@ module.exports = function (grunt) {
             }
         },
         'gh-pages': {
-            build: {
+            deploy: {
                 options: {
                     src: 'dist',
                     branch: 'master',
