@@ -1,0 +1,62 @@
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9"><![endif]--><!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Jim's Super Awesome Fun Stuff</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/09862b33.main.css">
+  <script src="scripts/vendor/0e15c528.modernizr.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#/maze">Maze</a></li>
+        <li><a href="#/chaos">Chaos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container"><!--[if lt IE 9]>
+    <p class="chromeframe"><p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    </p><img src="http://i.qkme.me/3ouw1s.jpg"><![endif]--><!--[if gt IE 8]><!-->
+    <div id="pages" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active"></div>
+        <div id="home" class="item">
+          <div class="hero-unit">
+            <h1>About Jim</h1>
+            <p>Jim is a student at Duke University. Jim is unfortunately none of the following people:</p>
+            <div id="cool-jims"><img src="http://www.mtv.com/news/photos/l/les_paul_players_09/d_jimnmy_page.jpg" title="Jimmy Page"><img src="http://www.kickmag.net/wordpress/wp-content/uploads/2011/11/jimi-hendrix-50.jpg" title="Jimi Hendrix"><img src="http://i2.listal.com/image/1314100/600full-jim-morrison.jpg" title="Jim Morrison"><img src="http://topnews.in/light/files/james-bond111.jpg" title="James Bond"></div>
+            <p>Jim likes messing around with JavaScript sometimes (but generally prefers using less awful languages). This is his playground of little CoffeeScript applications. The site is built with <a href="http://yeoman.io/">Yeoman</a>, and the source code can be view on Github.</p>
+          </div>
+        </div>
+        <div id="maze" class="item">
+          <div class="well">
+            <h1>Interactive Random Maze</h1>
+            <p>To play, click and drag the blue marker from the start zone (red) and drop it in the the end zone (green) for a surprise. Don't hit the walls!</p>
+            <p>The maze is randomly generated on each page load using a <a href="http://en.wikipedia.org/wiki/Maze_generation_algorithm#Randomized_Prim.27s_algorithm">randomized spanning tree algorithm</a>.</p>
+          </div>
+        </div>
+        <div id="chaos" class="item">
+          <div class="well">
+            <h1>Conway's Game of Life</h1>
+            <p>This is the classic <a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Game of Life</a> cellular automaton. To play, either click a cell or drag a pressed mouse over to activate/deactivate. The clear button will clear the grid. Clicking start will start the automaton, and clicking again will stop it.</p>
+          </div>
+          <button id="step" class="btn">Step</button> 
+          <button id="run" class="btn">Start</button> 
+          <button id="clear" class="btn">Clear</button>
+          <div id="grid"></div>
+        </div>
+      </div>
+    </div><!--<![endif]-->
+  </div>
+  <script>
+    var _gaq=[['_setAccount','UA-38821893-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  <script data-main="scripts/221e1f30.main" src="components/requirejs/require.js"></script>
+</body></html>
