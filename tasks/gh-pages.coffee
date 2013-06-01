@@ -34,7 +34,9 @@ module.exports = (grunt) ->
       # Commit changes
       (stdout, stderr, callback) ->
         grunt.log.writeln('Tracking all files')
-        repo.commit(grunt.template.process(options.msg), {}, callback)
+        message = grunt.template.process(options.msg)
+        grunt.log.writeln(message)
+        repo.commit(message, {}, callback)
 
       # Push to remote if set
       (callback) ->
