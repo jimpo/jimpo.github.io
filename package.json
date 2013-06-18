@@ -28,7 +28,8 @@
         "grunt-svgmin": "~0.1.0",
         "grunt-symlink": "~0.4.0",
         "matchdep": "~0.1.1",
-        "markdown": "~0.4.0"
+        "markdown": "~0.4.0",
+        "ncp": "~0.4.2"
     },
     "engines": {
         "node": ">=0.10.0"

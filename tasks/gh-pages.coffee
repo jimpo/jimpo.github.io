@@ -1,15 +1,16 @@
 async = require 'async'
 fs = require 'fs'
-path = require 'path'
 git = require 'gift'
+ncp = require('ncp').ncp
+path = require 'path'
 
 
 module.exports = (grunt) ->
   grunt.registerMultiTask 'gh-pages', ' ', ->
     done = do (callback = @async()) ->
       (err) ->
-        console.log(err)
-        err = new Error(err) unless err instanceof Error
+        if err? and not (err instanceof Error)
+          err = new Error(err)
         callback(err)
 
     options = @options(
@@ -26,7 +27,7 @@ module.exports = (grunt) ->
       # Copy files from build directory to root directory
       (stdout, message, callback) ->
         grunt.log.write(message)
-        mvFiles(options.src, '.', callback)
+        ncp(options.src, '.', callback)
 
       # Track all files
       repo.add.bind(repo, '.')
@@ -46,13 +47,4 @@ module.exports = (grunt) ->
           callback()
       ],
       done
-    )
-
-mvFiles = (src, dst, callback) ->
-  fs.readdir src, (err, files) ->
-    async.forEach(
-      files,
-      (file, callback) ->
-        fs.rename(path.join(src, file), path.join(dst, file), callback)
-      , callback
     )
